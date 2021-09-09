@@ -1,0 +1,30 @@
+#dataSolurceProperties mysql及连接池配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community?characterEncoding=utf-8&ampuseSSl=false&ampserverTimezone=GMT%2B8&ampuserUnicode=true
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 30000
+  thymeleaf:
+    prefix: classpath:/templates/
+
+#mybatis配置
+mybatis:
+  configuration:
+    #主键自增开启
+    use-generated-keys: true
+    #驼峰式与下划线相匹配
+    map-underscore-to-camel-case: true
+  mapper-locations:  classpath*:com/example/community/Mapper/xml/*.xml
+  type-aliases-package: com.example.community.entity
+logging:
+  level:
+    com:
+      example:
+        community: debug
+  config: classpath:logback-spring.xml
