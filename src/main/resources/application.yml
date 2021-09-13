@@ -13,6 +13,19 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
 
+  #spring mail 配置
+  mail:
+    host: smtp.sina.com
+    username: vv18811582939@sina.com
+    password: 749e3f773fc2585f
+    port: 465
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
 #mybatis配置
 mybatis:
   configuration:
@@ -28,3 +41,4 @@ logging:
       example:
         community: debug
   config: classpath:logback-spring.xml
+
